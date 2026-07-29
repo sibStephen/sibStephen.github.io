@@ -1,0 +1,47 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Sibu Stephen",
+    "identifier": "sibustephen.me"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:sibustephen.me:resource:official-profile",
+      "displayName": "Sibu Stephen official portfolio",
+      "mediaType": "text/html",
+      "url": "https://sibustephen.me/",
+      "description": "The official portfolio and identity page for Sibu Stephen, covering Drupal, accessibility, front-end development, open-source projects, articles, talks, prototypes, design work, a published book and music.",
+      "representativeQueries": [
+        "Who is Sibu Stephen?",
+        "Find Sibu Stephen's official website",
+        "Show Sibu Stephen's Drupal work",
+        "What talks has Sibu Stephen delivered?",
+        "Find Sibu Stephen's accessibility work",
+        "Show projects and articles by Sibu Stephen"
+      ]
+    },
+    {
+      "identifier": "urn:air:sibustephen.me:resource:profile-data",
+      "displayName": "Sibu Stephen machine-readable profile",
+      "mediaType": "application/json",
+      "url": "https://sibustephen.me/profile.json",
+      "description": "Structured profile data and verified links for Sibu Stephen.",
+      "representativeQueries": [
+        "List Sibu Stephen's professional profiles",
+        "Find Sibu Stephen's GitHub and Drupal profiles",
+        "Find Sibu Stephen's articles, talks and portfolio links"
+      ]
+    },
+    {
+      "identifier": "urn:air:sibustephen.me:resource:music",
+      "displayName": "Sibu Stephen on SoundCloud",
+      "mediaType": "text/html",
+      "url": "https://soundcloud.com/sibu-stephen",
+      "description": "The SoundCloud music profile associated with Sibu Stephen.",
+      "representativeQueries": [
+        "Find music by Sibu Stephen",
+        "Open Sibu Stephen's SoundCloud profile"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "name": "Sibu Stephen",
+  "canonicalUrl": "https://sibustephen.me/",
+  "summary": "Drupal and front-end web professional focused on accessibility, component-driven development, open source and modern web architecture.",
+  "topics": ["Drupal", "accessibility", "WCAG", "front-end development", "design systems", "Storybook", "Pattern Lab", "Next.js", "open source"],
+  "profiles": {
+    "github": ["https://github.com/sibStephen", "https://github.com/SibuStephen"],
+    "drupalGitLab": "https://git.drupalcode.org/project/intentui",
+    "drupalProfile": "https://www.drupal.org/u/sibustephen",
+    "medium": "https://medium.com/@sibustephen_55060",
+    "dzone": "https://dzone.com/users/2999458/sibustephen.html",
+    "behance": "https://www.behance.net/sibustephen",
+    "soundcloud": "https://soundcloud.com/sibu-stephen"
+  },
+  "projects": [
+    {"name": "Intent UI", "url": "https://git.drupalcode.org/project/intentui"},
+    {"name": "SCIE Drupal module", "url": "https://www.drupal.org/project/scie"},
+    {"name": "Highcharts work", "url": "https://highchartsexport.wordpress.com/"},
+    {"name": "Marvel app prototype", "url": "https://marvelapp.com/prototype/9156454/screen/43877127"}
+  ],
+  "book": {"name": "Livelihood of Living", "published": 2018, "url": "https://www.amazon.in/Livelihood-Living-Sibu-Stephen/dp/164429432X"},
+  "talks": [
+    {"name": "A11y Talks", "url": "https://www.drupal.org/project/a11ytalks/issues/3317821"},
+    {"name": "DrupalCamp Colorado", "url": "https://www.youtube.com/watch?v=DXxNubjGezg"},
+    {"name": "A11y Talks video", "url": "https://www.youtube.com/watch?v=bVZ1hHctYtE&t=3003s"},
+    {"name": "DDI Camp 2021", "url": "https://www.youtube.com/watch?v=ejq_Qw00DKg&t=5s"},
+    {"name": "Stanford WebCamp 2024", "url": "https://www.youtube.com/watch?v=rsYX1MsUxQc&t=909s"},
+    {"name": "Drupal Ottawa 2024", "url": "https://www.youtube.com/watch?v=QGzRy5UUh30"},
+    {"name": "Youth and Drupal meetup", "url": "https://www.linkedin.com/feed/update/urn:li:activity:7003227676861763584/"},
+    {"name": "The Drop Times interview", "url": "https://www.thedroptimes.com/interview/32918/drupal-developer-with-goal-develop-young-developers-interview-with-sibu-stephen"}
+  ]
+}
