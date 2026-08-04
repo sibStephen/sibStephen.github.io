@@ -57,7 +57,7 @@ export default function App() {
             </div>
           </div>
           <div className="profile-visual">
-            <img src="/sibu-profile.jpg" alt="Sibu Stephen" />
+            <img src="/sibu-profile-v2.jpg" alt="Sibu Stephen" />
             <div className="profile-code" aria-label="Technology profile summary">
               <p>profile.json</p>
               <code>Drupal · React · WCAG · Design systems · Open source</code>
