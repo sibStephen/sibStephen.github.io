@@ -1,0 +1,12 @@
+{
+  "generatedAt": null,
+  "agent": {
+    "name": "Sibu Tech Intelligence Agent",
+    "model": "gpt-4.1-mini",
+    "schedule": "Every Monday",
+    "observedWith": "Langfuse",
+    "sourceCount": 4
+  },
+  "summary": "The first automated technology briefing will appear after the GitHub Actions workflow runs.",
+  "items": []
+}

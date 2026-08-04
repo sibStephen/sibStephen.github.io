@@ -1,9 +1,10 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { ArrowRight, ArrowUpRight, BookOpen, Code2, Github, Headphones, Menu, Mic2, Moon, Search, Sun, X } from './icons'
 import ProjectCard from './components/ProjectCard'
+import TechNews from './components/TechNews'
 import { certifications, drupalContributions, education, expertise, projects, socials, talks, writing } from './data/portfolio'
 
-const nav = [['about', 'About'], ['work', 'Work'], ['drupal', 'Drupal'], ['ai', 'AI Profile'], ['writing', 'Writing'], ['credentials', 'Credentials'], ['connect', 'Connect']]
+const nav = [['about', 'About'], ['work', 'Work'], ['drupal', 'Drupal'], ['ai', 'AI Profile'], ['news', 'Tech News'], ['writing', 'Writing'], ['credentials', 'Credentials'], ['connect', 'Connect']]
 
 export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark')
@@ -130,6 +131,8 @@ export default function App() {
             <a className="text-link" href="https://us.cloud.langfuse.com" target="_blank" rel="noopener noreferrer">Open Langfuse <ArrowUpRight size={17}/></a>
           </div>
         </section>
+
+        <TechNews />
 
         <section id="writing" className="section panel-section">
           <div className="shell">

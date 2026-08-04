@@ -6,12 +6,18 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "update:tech-news": "node scripts/update-tech-news.mjs"
   },
   "dependencies": {
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "vite": "^7.0.0"
+    "vite": "^7.0.0",
+    "@langfuse/openai": "latest",
+    "@langfuse/otel": "latest",
+    "@opentelemetry/sdk-node": "latest",
+    "openai": "latest",
+    "rss-parser": "latest"
   },
   "devDependencies": {
     "gh-pages": "^6.3.0",
