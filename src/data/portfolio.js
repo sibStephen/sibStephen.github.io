@@ -64,3 +64,42 @@ export const certifications = [
   { title: 'CSS Beginner — Score 24%', issuer: 'mypath io', issued: 'Nov 2015' },
   { title: 'Developing ASP.NET MVC Web Applications', issuer: 'NIIT Limited', issued: 'Aug 2012', credential: '12DVZZZZZ2464' }
 ]
+
+export const drupalContributions = [
+  {
+    metric: '11+ years',
+    title: 'Drupal community member',
+    description: 'Contributing code, modules, themes, documentation, event organization and answers across the Drupal ecosystem.',
+    url: 'https://www.drupal.org/u/sibustephen'
+  },
+  {
+    metric: 'Maintainer',
+    title: 'Intent Adaptive UI',
+    description: 'A maintained Drupal project focused on adaptive, component-driven user interface patterns.',
+    url: 'https://www.drupal.org/project/intentui'
+  },
+  {
+    metric: 'Maintainer',
+    title: 'Semantic Content Impact Engine (SCIE) Analyser',
+    description: 'A contributed Drupal module that supports semantic content analysis and structured content workflows.',
+    url: 'https://www.drupal.org/project/scie'
+  },
+  {
+    metric: 'Speaker',
+    title: 'MidCamp and A11yTalks',
+    description: 'Shared practical work on accessible theming, dark and light experiences, Storybook and component-led front ends.',
+    url: 'https://www.drupal.org/u/sibustephen'
+  },
+  {
+    metric: 'Organizer',
+    title: 'Drupal meetups',
+    description: 'Helped organize Drupal Meetup Edmonton and Drupal Pune community events.',
+    url: 'https://www.drupal.org/u/sibustephen'
+  },
+  {
+    metric: 'Issue credit',
+    title: 'Drupal core tabledrag theming',
+    description: 'Credited on issues improving theme-level customization for tabledrag handles and row-weight controls.',
+    url: 'https://www.drupal.org/u/sibustephen/issue-credits'
+  }
+]

@@ -1,0 +1,31 @@
+openapi: 3.1.0
+info:
+  title: Sibu Stephen Portfolio Agent Action
+  version: 1.0.0
+servers:
+  - url: https://YOUR-SECURE-BACKEND.example.com
+paths:
+  /portfolio-agent:
+    post:
+      operationId: queryPortfolioAgent
+      summary: Query Sibu Stephen's portfolio and record a Langfuse trace
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                question: { type: string }
+                sessionId: { type: string }
+              required: [question]
+      responses:
+        '200':
+          description: Portfolio response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  answer: { type: string }
+                  source: { type: string }

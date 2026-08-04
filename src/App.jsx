@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo, useState } from 'react'
 import { ArrowRight, ArrowUpRight, BookOpen, Code2, Github, Headphones, Menu, Mic2, Moon, Search, Sun, X } from './icons'
 import ProjectCard from './components/ProjectCard'
-import { certifications, education, expertise, projects, socials, talks, writing } from './data/portfolio'
+import { certifications, drupalContributions, education, expertise, projects, socials, talks, writing } from './data/portfolio'
 
-const nav = [['work', 'Work'], ['writing', 'Writing'], ['credentials', 'Credentials'], ['talks', 'Talks'], ['connect', 'Connect']]
+const nav = [['about', 'About'], ['work', 'Work'], ['drupal', 'Drupal'], ['ai', 'AI Profile'], ['writing', 'Writing'], ['credentials', 'Credentials'], ['connect', 'Connect']]
 
 export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark')
@@ -65,6 +65,18 @@ export default function App() {
           </div>
         </section>
 
+        <section id="about" className="section shell about-section">
+          <div className="section-kicker">// About</div>
+          <div className="about-grid">
+            <h2>Hello 👋</h2>
+            <div className="about-copy">
+              <p>I am a Drupal developer and digital experience specialist with more than a decade of experience building, maintaining and improving complex web platforms.</p>
+              <p>My work spans Drupal architecture, accessible front-end systems, React, custom modules, design systems and performance. I enjoy making complicated requirements feel clear, practical and reusable.</p>
+              <p>I also contribute to the Drupal community through maintained projects, patches, documentation, speaking and meetup organization.</p>
+            </div>
+          </div>
+        </section>
+
         <section className="ticker" aria-label="Areas of expertise">
           <div>{[...expertise, ...expertise].map((item, index) => <span key={`${item}-${index}`}>{item}<b>✦</b></span>)}</div>
         </section>
@@ -78,9 +90,50 @@ export default function App() {
           {filteredProjects.length === 0 && <p className="empty-state">No matching projects. Try another keyword.</p>}
         </section>
 
+        <section id="drupal" className="section shell">
+          <div className="section-heading split">
+            <div><p className="eyebrow">02 · Open source</p><h2>Drupal contributions</h2></div>
+            <a className="text-link" href="https://www.drupal.org/u/sibustephen" target="_blank" rel="me noopener noreferrer">View Drupal.org profile <ArrowUpRight size={17}/></a>
+          </div>
+          <div className="contribution-grid">
+            {drupalContributions.map(item => (
+              <a className="contribution-card" href={item.url} target="_blank" rel="noopener noreferrer" key={item.title}>
+                <span>{item.metric}</span><h3>{item.title}</h3><p>{item.description}</p><ArrowUpRight size={18}/>
+              </a>
+            ))}
+          </div>
+        </section>
+
+
+        <section id="ai" className="section shell ai-profile-section">
+          <div className="section-heading split">
+            <div><p className="eyebrow">03 · Agent-ready profile</p><h2>AI profile and machine-readable portfolio</h2></div>
+            <span className="ai-status"><span /> Langfuse-ready backend included</span>
+          </div>
+          <div className="ai-profile-grid">
+            <article className="ai-intro-card">
+              <p className="label">AI PROFILE</p>
+              <h3>A structured identity layer for agents, search tools and assistants.</h3>
+              <p>The site keeps the redesigned human-facing portfolio while also exposing machine-readable profile data, an AI catalogue and LLM guidance files.</p>
+              <div className="ai-tags"><span>Agent discoverability</span><span>Structured JSON</span><span>LLM context</span><span>Langfuse tracing</span></div>
+            </article>
+            <div className="ai-resource-list">
+              <a href="/.well-known/ai-catalog.json" target="_blank" rel="noopener noreferrer"><div><b>AI Catalog</b><code>/.well-known/ai-catalog.json</code><p>Discoverable catalogue of portfolio capabilities, projects and agent resources.</p></div><ArrowUpRight /></a>
+              <a href="/profile.json" target="_blank" rel="noopener noreferrer"><div><b>Profile JSON</b><code>/profile.json</code><p>Structured professional profile for integrations and AI-powered experiences.</p></div><ArrowUpRight /></a>
+              <a href="/llms.txt" target="_blank" rel="noopener noreferrer"><div><b>LLM Guide</b><code>/llms.txt</code><p>Concise guidance that helps language models understand and navigate the site.</p></div><ArrowUpRight /></a>
+              <a href="/llms-full.txt" target="_blank" rel="noopener noreferrer"><div><b>Full AI Context</b><code>/llms-full.txt</code><p>Expanded context for assistants that need a richer view of the portfolio.</p></div><ArrowUpRight /></a>
+            </div>
+          </div>
+          <div className="agent-observability">
+            <div><p className="label">AGENT OBSERVABILITY</p><h3>Langfuse tracing is retained in the server package.</h3></div>
+            <p>The <code>server/</code> integration records action requests, sessions, outputs, metadata and errors without exposing the Langfuse secret key in the static React frontend.</p>
+            <a className="text-link" href="https://us.cloud.langfuse.com" target="_blank" rel="noopener noreferrer">Open Langfuse <ArrowUpRight size={17}/></a>
+          </div>
+        </section>
+
         <section id="writing" className="section panel-section">
           <div className="shell">
-            <div className="section-heading"><p className="eyebrow">02 · Ideas in public</p><h2>Writing and publication</h2></div>
+            <div className="section-heading"><p className="eyebrow">04 · Ideas in public</p><h2>Writing and publication</h2></div>
             <div className="writing-grid">
               {writing.map((item, index) => (
                 <a className="writing-card" href={item.url} target="_blank" rel="me noopener noreferrer" key={item.url}>
@@ -92,7 +145,7 @@ export default function App() {
         </section>
 
         <section id="credentials" className="section shell">
-          <div className="section-heading"><p className="eyebrow">03 · Learning</p><h2>Education and certifications</h2></div>
+          <div className="section-heading"><p className="eyebrow">05 · Learning</p><h2>Education and certifications</h2></div>
           <div className="education-grid">
             {education.map(item => <article className="education-card" key={item.school}><p className="label">{item.years}</p><h3>{item.degree}</h3><p>{item.school}</p></article>)}
           </div>
@@ -108,7 +161,7 @@ export default function App() {
 
         <section id="talks" className="section panel-section">
           <div className="shell">
-            <div className="section-heading"><p className="eyebrow">04 · Speaking</p><h2>Talks, camps and interviews</h2></div>
+            <div className="section-heading"><p className="eyebrow">06 · Speaking</p><h2>Talks, camps and interviews</h2></div>
             <div className="talk-layout">
               <div className="talk-intro"><Mic2 size={32}/><p>Sharing practical lessons from accessibility, component-driven front ends and the Drupal community.</p></div>
               <div className="talk-list">{talks.map((talk, index) => <a href={talk.url} target="_blank" rel="noopener noreferrer" key={talk.url}><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{talk.title}</h3><p>{talk.detail}</p></div><ArrowUpRight size={18}/></a>)}</div>
@@ -118,7 +171,7 @@ export default function App() {
 
         <section id="connect" className="section shell">
           <div className="creative-card">
-            <div><p className="eyebrow">05 · Connect</p><h2>Find me across the web.</h2><p>Code, design, articles, community work, music and professional updates—all in one place.</p><img className="creative-image" src="/graphic-design.jpg" alt="Creative design work by Sibu Stephen" /></div>
+            <div><p className="eyebrow">07 · Connect</p><h2>Find me across the web.</h2><p>Code, design, articles, community work, music and professional updates—all in one place.</p><img className="creative-image" src="/graphic-design.jpg" alt="Creative design work by Sibu Stephen" /></div>
             <div className="creative-links">
               {socials.map(item => <a href={item.url} target="_blank" rel="me noopener noreferrer" key={item.url}><Code2/><span><b>{item.label}</b>{item.detail}</span><ArrowUpRight/></a>)}
               <a href="https://www.amazon.in/Livelihood-Living-Sibu-Stephen/dp/164429432X" target="_blank" rel="author noopener noreferrer"><BookOpen/><span><b>Livelihood of Living</b>Published in 2018</span><ArrowUpRight/></a>
