@@ -1,0 +1,43 @@
+# Sibu Stephen
+
+> Official portfolio and machine-readable identity source for Sibu Stephen, a Drupal and front-end web professional focused on accessibility, component-driven development, open source and modern web architecture.
+
+Canonical website: https://sibustephen.me/
+
+## Professional profiles
+
+- [GitHub: sibStephen](https://github.com/sibStephen)
+- [GitHub: SibuStephen](https://github.com/SibuStephen)
+- [Drupal GitLab: Intent UI](https://git.drupalcode.org/project/intentui)
+- [Drupal.org profile](https://www.drupal.org/u/sibustephen)
+- [Medium articles](https://medium.com/@sibustephen_55060)
+- [DZone articles](https://dzone.com/users/2999458/sibustephen.html)
+- [Behance portfolio](https://www.behance.net/sibustephen)
+- [SoundCloud](https://soundcloud.com/sibu-stephen)
+
+## Selected projects
+
+- [SCIE Drupal module](https://www.drupal.org/project/scie)
+- [Highcharts work](https://highchartsexport.wordpress.com/)
+- [Marvel app prototype](https://marvelapp.com/prototype/9156454/screen/43877127)
+
+## Publication
+
+- [Livelihood of Living, published in 2018](https://www.amazon.in/Livelihood-Living-Sibu-Stephen/dp/164429432X)
+
+## Talks and community
+
+- [A11y Talks](https://www.drupal.org/project/a11ytalks/issues/3317821)
+- [DrupalCamp Colorado](https://www.youtube.com/watch?v=DXxNubjGezg)
+- [A11y Talks video](https://www.youtube.com/watch?v=bVZ1hHctYtE&t=3003s)
+- [DDI Camp 2021: Drupal front end, Storybook and Pattern Lab](https://www.youtube.com/watch?v=ejq_Qw00DKg&t=5s)
+- [Stanford WebCamp 2024: Next.js with Storybook](https://www.youtube.com/watch?v=rsYX1MsUxQc&t=909s)
+- [Drupal Ottawa 2024: Next.js with Storybook](https://www.youtube.com/watch?v=QGzRy5UUh30)
+- [Youth and Drupal meetup](https://www.linkedin.com/feed/update/urn:li:activity:7003227676861763584/)
+- [The Drop Times interview](https://www.thedroptimes.com/interview/32918/drupal-developer-with-goal-develop-young-developers-interview-with-sibu-stephen)
+
+## Machine-readable resources
+
+- [Structured profile JSON](https://sibustephen.me/profile.json)
+- [AI catalog](https://sibustephen.me/.well-known/ai-catalog.json)
+- [Sitemap](https://sibustephen.me/sitemap.xml)

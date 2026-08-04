@@ -1,0 +1,16 @@
+{
+  "name": "sibu-portfolio-agent-action",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@langfuse/otel": "^5.0.0",
+    "@langfuse/tracing": "^5.0.0",
+    "@opentelemetry/sdk-node": "^0.203.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.0",
+    "express": "^5.1.0"
+  }
+}
