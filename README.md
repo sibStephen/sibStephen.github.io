@@ -48,5 +48,16 @@ For production:
 ```bash
 npm run build
 ```
+## Compiled version and where the code live and deployment script lives - 
 
+Branch master = source code                                      
+Branch gh-pages = live compiled site
+
+## Deploying to gh-pages
+
+After code is pushed to master, run the following code to publish youir changes  -
+
+npm run build
+npx gh-pages -d dist
+ 
 The generated site will be placed in `dist/`.
