@@ -1,0 +1,169 @@
+import fs from "node:fs/promises";
+import Parser from "rss-parser";
+import { GoogleGenAI } from "@google/genai";
+import { trace, SpanStatusCode } from "@opentelemetry/api";
+import { NodeSDK } from "@opentelemetry/sdk-node";
+import { LangfuseSpanProcessor } from "@langfuse/otel";
+
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+async function generateWithRetry(client, params, maxAttempts = 5) {
+  if (!params?.model) {
+    throw new Error("Gemini request is missing the model.");
+  }
+
+  if (!params?.contents) {
+    throw new Error("Gemini request is missing contents.");
+  }
+
+  let lastError;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    try {
+      return await client.models.generateContent({
+        model: params.model,
+        contents: params.contents,
+        config: params.config,
+      });
+    } catch (error) {
+      lastError = error;
+
+      const status = error?.status;
+      const retryable = [429, 500, 502, 503, 504].includes(status);
+
+      if (!retryable || attempt === maxAttempts) {
+        throw error;
+      }
+
+      const delay = Math.min(
+        2000 * (2 ** (attempt - 1)) + Math.floor(Math.random() * 1000),
+        30000,
+      );
+
+      console.warn(
+        `Gemini request failed with ${status}. ` +
+        `Retrying in ${delay}ms (${attempt}/${maxAttempts})...`,
+      );
+
+      await sleep(delay);
+    }
+  }
+
+  throw lastError;
+}
+
+async function generateBriefing(articles) {
+  return tracer.startActiveSpan("generate-weekly-tech-news", async (span) => {
+    try {
+      const prompt = `You are Sibu Stephen's scheduled technology-news curation agent.
+Select exactly five timely and meaningful stories from the supplied RSS records.
+Prioritize AI, web engineering, Drupal, accessibility, cloud, developer tooling,
+cybersecurity, and digital experience. Use only supplied facts. Keep summaries
+factual and useful. Preserve each selected article's original URL and source.
+
+RSS records:\n${JSON.stringify(articles, null, 2)}`;
+
+      span.setAttributes({
+        "gen_ai.system": "google",
+        "gen_ai.request.model": model,
+        "gen_ai.operation.name": "generate_content",
+        "agent.name": "Sibu Tech Intelligence Agent",
+        "agent.workflow": "weekly-tech-news",
+        "input.article_count": articles.length,
+        "langfuse.session.id": `weekly-tech-news-${new Date().toISOString().slice(0, 10)}`,
+        "langfuse.tags": JSON.stringify([
+          "portfolio",
+          "scheduled-agent",
+          "tech-news",
+          "gemini",
+        ]),
+      });
+
+      const response = await gemini.models.generateContent(gemini,{
+        model,
+        contents: prompt,
+        config: {
+          temperature: 0.2,
+          responseMimeType: "application/json",
+          responseJsonSchema: responseSchema,
+        },
+      });
+
+      const content = response.text;
+      if (!content) throw new Error("Gemini returned no content.");
+
+      const parsed = parseJson(content);
+      if (!Array.isArray(parsed.items) || parsed.items.length === 0) {
+        throw new Error("Gemini output did not contain news items.");
+      }
+
+      span.setAttributes({
+        "gen_ai.response.model": model,
+        "output.item_count": parsed.items.length,
+      });
+      span.setStatus({ code: SpanStatusCode.OK });
+      return parsed;
+    } catch (error) {
+      span.recordException(error);
+      span.setStatus({ code: SpanStatusCode.ERROR, message: error.message });
+      throw error;
+    } finally {
+      span.end();
+    }
+  });
+}
+
+async function main() {
+  return tracer.startActiveSpan("weekly-tech-news-agent", async (span) => {
+    try {
+      span.setAttributes({
+        "agent.name": "Sibu Tech Intelligence Agent",
+        "agent.type": "scheduled-news-curator",
+        "site.domain": "sibustephen.me",
+      });
+
+      const articles = await collectArticles();
+      const briefing = await generateBriefing(articles);
+      const output = {
+        generatedAt: new Date().toISOString(),
+        agent: {
+          name: "Sibu Tech Intelligence Agent",
+          model,
+          provider: "Google Gemini",
+          schedule: "Every Monday",
+          observedWith: "Langfuse",
+          sourceCount: feeds.length,
+        },
+        summary: briefing.summary,
+        items: briefing.items.slice(0, 5),
+      };
+
+      await fs.writeFile(
+        "public/tech-news.json",
+        `${JSON.stringify(output, null, 2)}\n`,
+        "utf8",
+      );
+
+      span.setAttribute("output.published_item_count", output.items.length);
+      span.setStatus({ code: SpanStatusCode.OK });
+      console.log(
+        `Published ${output.items.length} curated technology stories using ${model}.`,
+      );
+    } catch (error) {
+      span.recordException(error);
+      span.setStatus({ code: SpanStatusCode.ERROR, message: error.message });
+      throw error;
+    } finally {
+      span.end();
+    }
+  });
+}
+
+try {
+  await main();
+} finally {
+  await sdk.shutdown();
+}
