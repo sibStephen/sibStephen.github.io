@@ -132,9 +132,10 @@ export default function App() {
           </div>
         </section>
 
-        <TechNews />
 
-        <section id="writing" className="section panel-section">
+              <TechNews />
+
+      <section id="writing" className="section panel-section">
           <div className="shell">
             <div className="section-heading"><p className="eyebrow">04 · Ideas in public</p><h2>Writing and publication</h2></div>
             <div className="writing-grid">
