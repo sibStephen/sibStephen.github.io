@@ -3,18 +3,18 @@ name: Update weekly technology news
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 14 * * 1"
+    - cron: "15 14 * * 1"
 
 permissions:
   contents: write
 
-concurrency:
-  group: weekly-tech-news
-  cancel-in-progress: false
-
 jobs:
-  curate-and-deploy:
+  update-news:
     runs-on: ubuntu-latest
+
+    environment:
+      name: github-pages
+
     steps:
       - name: Check out master
         uses: actions/checkout@v4
@@ -29,31 +29,31 @@ jobs:
           cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Generate Langfuse-observed briefing
-        run: npm run update:tech-news
+      - name: Generate weekly technology briefing
+        run: node scripts/update-tech-news.mjs
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-4.1-mini' }}
           LANGFUSE_PUBLIC_KEY: ${{ secrets.LANGFUSE_PUBLIC_KEY }}
           LANGFUSE_SECRET_KEY: ${{ secrets.LANGFUSE_SECRET_KEY }}
-          LANGFUSE_BASE_URL: https://us.cloud.langfuse.com
+          LANGFUSE_BASE_URL: ${{ secrets.LANGFUSE_BASE_URL }}
 
-      - name: Commit generated briefing
+      - name: Verify generated news
         run: |
-          git config user.name "Sibu Tech Intelligence Agent"
+          test -f public/tech-news.json
+          cat public/tech-news.json
+
+      - name: Commit updated briefing
+        run: |
+          git config user.name "Sibu Tech News Agent"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add public/tech-news.json
-          if ! git diff --cached --quiet; then
-            git commit -m "chore: update weekly technology briefing"
-            git push origin master
+
+          if git diff --cached --quiet; then
+            echo "No news changes to commit."
+            exit 0
           fi
 
-      - name: Build website
-        run: npm run build
-
-      - name: Publish to gh-pages
-        run: npx gh-pages -d dist -b gh-pages --dotfiles -m "Deploy weekly technology briefing"
-        env:
-          GH_TOKEN: ${{ github.token }}
+          git commit -m "chore: update weekly technology briefing"
+          git push origin master
