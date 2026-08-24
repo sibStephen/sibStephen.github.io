@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-24T15:00:55.965Z",
+  "generatedAt": "2026-08-24T16:36:48.089Z",
   "agent": {
     "name": "Sibu Tech News Agent",
     "provider": "Google Gemini",
@@ -7,22 +7,11 @@
     "schedule": "Weekly",
     "observability": "Langfuse"
   },
-  "summary": "A concise overview of this week's technology developments, focusing on advancements in artificial intelligence, privacy-centric mobile operating systems, and the legal complexities of model training.",
+  "summary": "An overview of this week's technology developments, highlighting major advancements in artificial intelligence, developer tools, and privacy-focused mobile operating systems.",
   "items": [
     {
-      "title": "OpenAI is building AI agents for everything. Will everyone use them?",
-      "summary": "OpenAI is actively developing AI agents designed to assist with a wide range of tasks from software engineering to everyday activities. This initiative represents a major push to bring autonomous agent technology to mainstream users.",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them/",
-      "publishedAt": "2026-08-24T15:00:00.000Z",
-      "topics": [
-        "AI",
-        "Developer tools"
-      ]
-    },
-    {
       "title": "Hugging Face reportedly in talks to be acquired for $13B",
-      "summary": "Hugging Face is reportedly discussing potential acquisition offers that value the open-source AI platform at approximately $13 billion. However, the founders' commitment to the community has raised doubts about whether a sale will ultimately go through.",
+      "summary": "Hugging Face is reportedly in talks for an acquisition that would value the AI platform at approximately $13 billion. However, the founders' sense of responsibility to the community has raised doubts about whether a sale will actually occur.",
       "source": "TechCrunch",
       "url": "https://techcrunch.com/2026/08/24/hugging-face-reportedly-in-talks-to-be-acquired-for-13b/",
       "publishedAt": "2026-08-24T13:47:26.000Z",
@@ -32,21 +21,21 @@
       ]
     },
     {
-      "title": "Who’s behind the new ‘stealth model’ Ox Alpha?",
-      "summary": "A mysterious new AI model named Ox Alpha has emerged in stealth, sparking intense speculation across the tech community. Its sudden appearance highlights the ongoing competitive frenzy and secrecy surrounding frontier model development.",
+      "title": "OpenAI is building AI agents for everything. Will everyone use them?",
+      "summary": "OpenAI is actively developing AI agents designed to assist with a wide range of tasks from software engineering to everyday activities. This initiative represents a major push by the frontier lab to bring agentic AI technology to the general public.",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/08/23/whos-behind-the-new-stealth-model-ox-alpha/",
-      "publishedAt": "2026-08-23T20:01:36.000Z",
+      "url": "https://techcrunch.com/2026/08/24/openai-is-building-an-ai-agent-for-everything-will-everyone-use-them/",
+      "publishedAt": "2026-08-24T15:00:00.000Z",
       "topics": [
         "AI"
       ]
     },
     {
-      "title": "Is it legal to train AI models on copyrighted books? It’s complicated",
-      "summary": "The legal implications of training AI models on copyrighted books remain highly complex and contested. This debate is crucial as authors raise concerns about their work being used without consent to build tools that could threaten their livelihoods.",
+      "title": "Valor, Point72 back General Intuition at $6B valuation as AI startup pushes into robotics",
+      "summary": "AI startup General Intuition is in discussions to raise funding at a $6 billion pre-money valuation from investors including Valor Ventures and Point72 Ventures. The company plans to use the capital to advance its foundation models that train AI agents to navigate physical space and time.",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/08/23/is-it-legal-to-train-ai-models-on-copyrighted-books-its-complicated/",
-      "publishedAt": "2026-08-23T15:00:00.000Z",
+      "url": "https://techcrunch.com/2026/08/24/valor-point72-back-general-intuition-at-6b-valuation-as-ai-startup-pushes-into-robotics/",
+      "publishedAt": "2026-08-24T15:24:18.000Z",
       "topics": [
         "AI",
         "Digital engineering"
@@ -54,13 +43,22 @@
     },
     {
       "title": "De-Googled GrapheneOS is coming to Motorola’s foldables next year",
-      "summary": "GrapheneOS, a privacy-focused and de-Googled version of Android, has announced plans to officially support Motorola smartphones starting next year. This expansion brings advanced security features to a wider range of hardware, including foldable devices.",
+      "summary": "The privacy-focused, open-source Android operating system GrapheneOS has announced plans to expand official support to Motorola smartphones next year. This expansion will initially target traditional flagship models before rolling out to Motorola's foldable devices.",
       "source": "The Verge",
       "url": "https://www.theverge.com/tech/983714/grapheneos-motorola-razr-fold-ultra-support-pixel-11",
       "publishedAt": "2026-08-24T11:37:53.000Z",
       "topics": [
-        "Cybersecurity",
-        "Web development"
+        "Cybersecurity"
+      ]
+    },
+    {
+      "title": "Raspberry Pi shares its official tutorial for making a cyberdeck",
+      "summary": "Raspberry Pi has released an official guide to help users build their own custom, portable cyberdecks using recycled or thrifted components. The tutorial capitalizes on a viral social media trend while offering a creative project amidst rising component costs.",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/tech/983786/raspberry-pi-cyberdeck-tutorial-price-increases",
+      "publishedAt": "2026-08-24T14:49:44.000Z",
+      "topics": [
+        "Developer tools"
       ]
     }
   ]
