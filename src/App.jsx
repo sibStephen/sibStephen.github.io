@@ -319,7 +319,6 @@ export default function App() {
                   <p className="chatbot-badge">Sibu AI</p>
                   <h3>Portfolio assistant</h3>
                 </div>
-                <span className="chatbot-live">Online</span>
               </div>
 
               <div className="quick-prompts" aria-label="Suggested questions">
