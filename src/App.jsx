@@ -2,9 +2,9 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { ArrowRight, ArrowUpRight, BookOpen, Code2, Github, Headphones, Menu, Mic2, Moon, Search, Sun, X } from './icons'
 import ProjectCard from './components/ProjectCard'
 import TechNews from './components/TechNews'
-import { certifications, drupalContributions, education, expertise, projects, socials, talks, writing } from './data/portfolio'
+import { caseStudies, certifications, drupalContributions, education, expertise, projects, socials, talks, writing } from './data/portfolio'
 
-const nav = [['about', 'About'], ['work', 'Work'], ['drupal', 'Drupal'], ['ai', 'AI Profile'], ['news', 'Tech News'], ['writing', 'Writing'], ['credentials', 'Credentials'], ['connect', 'Connect']]
+const nav = [['about', 'About'], ['work', 'Work'], ['drupal', 'Drupal'], ['case-studies', 'Case Studies'], ['ai', 'AI Profile'], ['news', 'Tech News'], ['writing', 'Writing'], ['credentials', 'Credentials'], ['accessibility', 'Accessibility'], ['connect', 'Connect']]
 const quickPrompts = [
   'Who is Sibu Stephen?',
   'What does he do?',
@@ -227,6 +227,26 @@ export default function App() {
         </section>
 
 
+        <section id="case-studies" className="section shell case-studies-section">
+          <div className="section-heading split">
+            <div><p className="eyebrow">Case studies</p><h2>Situation, task, action, result</h2></div>
+          </div>
+          <div className="case-study-grid">
+            {caseStudies.map(item => (
+              <article className="case-study-card" key={item.title}>
+                <h3>{item.title}</h3>
+                <dl>
+                  <div><dt>Situation</dt><dd>{item.situation}</dd></div>
+                  <div><dt>Task</dt><dd>{item.task}</dd></div>
+                  <div><dt>Action</dt><dd>{item.action}</dd></div>
+                  <div><dt>Result</dt><dd>{item.result}</dd></div>
+                </dl>
+                <a className="text-link" href={item.url} target="_blank" rel="noopener noreferrer">View source <ArrowUpRight size={17}/></a>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section id="ai" className="section shell ai-profile-section">
           <div className="section-heading split">
             <div><p className="eyebrow">03 · Agent-ready profile</p><h2>AI profile and machine-readable portfolio</h2></div>
@@ -291,6 +311,25 @@ export default function App() {
               <div className="talk-intro"><Mic2 size={32}/><p>Sharing practical lessons from accessibility, component-driven front ends and the Drupal community.</p></div>
               <div className="talk-list">{talks.map((talk, index) => <a href={talk.url} target="_blank" rel="noopener noreferrer" key={talk.url}><span>{String(index + 1).padStart(2, '0')}</span><div><h3>{talk.title}</h3><p>{talk.detail}</p></div><ArrowUpRight size={18}/></a>)}</div>
             </div>
+          </div>
+        </section>
+
+        <section id="accessibility" className="section shell accessibility-section">
+          <div className="section-heading"><p className="eyebrow">Accessibility</p><h2>Accessibility statement</h2></div>
+          <div className="accessibility-grid">
+            <div className="accessibility-copy">
+              <p>This site is designed and built with WCAG 2.2 Level AA as the target standard, in line with the accessibility expectations set out in government digital service standards.</p>
+              <p>Accessibility isn't an add-on here—it's part of how I work day to day as a Drupal and front-end accessibility advocate, and this site is built to the same standard I hold client and community projects to.</p>
+              <p>If you use assistive technology and find something on this site that doesn't work as expected, I want to know about it. Please get in touch via <a href="https://www.linkedin.com/in/sibu-stephen-841b6353/" target="_blank" rel="me noopener noreferrer">LinkedIn</a> and I'll address it.</p>
+            </div>
+            <ul className="accessibility-checklist">
+              <li>Semantic landmarks and a "skip to main content" link on every page</li>
+              <li>Full keyboard operability, including the navigation menu and chat widget</li>
+              <li>Visible focus states and descriptive <code>aria-label</code>s on interactive controls</li>
+              <li>Color contrast checked in both the light and dark themes</li>
+              <li>Text alternatives provided for meaningful images and icons</li>
+              <li>Content structured with proper heading order for screen reader navigation</li>
+            </ul>
           </div>
         </section>
 

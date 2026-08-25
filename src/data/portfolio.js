@@ -65,6 +65,41 @@ export const certifications = [
   { title: 'Developing ASP.NET MVC Web Applications', issuer: 'NIIT Limited', issued: 'Aug 2012', credential: '12DVZZZZZ2464' }
 ]
 
+export const caseStudies = [
+  {
+    title: 'Intent Adaptive UI',
+    situation: 'Drupal themes commonly lacked reusable, accessible, component-driven UI patterns, which led to inconsistent front ends being rebuilt project after project.',
+    task: 'Build and maintain an open-source Drupal project that gives teams a ready-made, adaptive, component-driven UI foundation instead of starting from scratch.',
+    action: 'Architected and published Intent UI on Drupal.org, documented its component patterns, and have maintained it as an ongoing project—reviewing issues and incorporating contributions.',
+    result: 'Intent UI is an actively maintained Drupal.org project that other teams can adopt directly, reducing duplicate front-end effort across the Drupal ecosystem.',
+    url: 'https://www.drupal.org/project/intentui'
+  },
+  {
+    title: 'Semantic Content Impact Engine (SCIE) Analyser',
+    situation: 'Content teams needed a structured way to analyse and understand the semantic quality of their content within Drupal, rather than relying on manual review.',
+    task: 'Design and build a Drupal module that supports semantic content analysis and structured content workflows.',
+    action: 'Developed and published the SCIE module on Drupal.org, defining its analysis workflow and maintaining it as the project\'s issue queue evolved.',
+    result: 'SCIE is a published, maintained Drupal module that gives content teams a repeatable, structured approach to semantic content analysis.',
+    url: 'https://www.drupal.org/project/scie'
+  },
+  {
+    title: 'Accessible theming across light and dark experiences',
+    situation: 'Teams building Drupal front ends often struggled to keep accessibility consistent while supporting both light and dark themes and component-driven design systems.',
+    task: 'Share practical, reusable techniques for accessible theming that other Drupal developers could apply to their own projects.',
+    action: 'Presented sessions at MidCamp and A11yTalks covering accessible theming, dark and light experiences, and Storybook-based, component-led front ends.',
+    result: 'Practical accessibility and theming techniques were shared directly with the Drupal community through recorded, publicly referenced talks.',
+    url: 'https://www.drupal.org/u/sibustephen'
+  },
+  {
+    title: 'Drupal core tabledrag theming',
+    situation: 'Drupal core\'s tabledrag component offered limited theme-level customization for handles and row-weight controls, constraining accessible and design-system-driven front ends.',
+    task: 'Contribute an improvement to Drupal core that gives themes more control over tabledrag presentation.',
+    action: 'Submitted and collaborated on core issue-queue work to improve theme-level customization of tabledrag handles and row-weight controls.',
+    result: 'Credited on the Drupal core issue queue for the contribution, an improvement now available to every Drupal site using tabledrag.',
+    url: 'https://www.drupal.org/u/sibustephen/issue-credits'
+  }
+]
+
 export const drupalContributions = [
   {
     metric: '11+ years',
