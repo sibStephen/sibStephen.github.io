@@ -5,11 +5,104 @@ import TechNews from './components/TechNews'
 import { certifications, drupalContributions, education, expertise, projects, socials, talks, writing } from './data/portfolio'
 
 const nav = [['about', 'About'], ['work', 'Work'], ['drupal', 'Drupal'], ['ai', 'AI Profile'], ['news', 'Tech News'], ['writing', 'Writing'], ['credentials', 'Credentials'], ['connect', 'Connect']]
+const quickPrompts = [
+  'Who is Sibu Stephen?',
+  'What does he do?',
+  'What projects has he worked on?',
+  'Where is he based?',
+  'What is his Drupal background?'
+]
+
+const profileSummary = 'Sibu Stephen is a Drupal architect, front-end engineer, accessibility advocate, writer, community contributor and digital experience professional who blends technical depth with user-centered design.'
+
+function buildProfileAnswer(question) {
+  const q = question.toLowerCase()
+
+  if (/(who|about|profile|introduction|introduce|biography|bio)/.test(q)) {
+    return `${profileSummary} He works across Drupal architecture, React, design systems, accessibility, performance, open-source contribution, mentoring and public-facing technical communication.`
+  }
+
+  if (/(drupal|architect|developer|role|job|work|what does he do|what does sibu do)/.test(q)) {
+    return 'Sibu Stephen is a Drupal architect and front-end engineer whose work includes Drupal architecture, accessible product design, component-driven front ends, performance-focused development, open-source contribution, and helping teams turn complex requirements into usable digital experiences.'
+  }
+
+  if (/(react|front[- ]end|accessibility|wcag|design systems|open source|ui|ux|product)/.test(q)) {
+    return 'He specializes in Drupal, React, accessibility, WCAG-conscious design, design systems, Storybook, component-driven UI, open-source development and better product experiences for real users.'
+  }
+
+  if (/(education|degree|masters|school|computer science|study|background)/.test(q)) {
+    return 'Sibu Stephen studied computer science at Symbiosis Institute of Computer Studies and Research, where he completed his Master of Science, and earlier earned a Bachelor in Computer Application from Wadia College, Pune University.'
+  }
+
+  if (/(project|intent ui|scie|highcharts|marvel|portfolio|what has he done|work history)/.test(q)) {
+    return 'He has worked on projects such as Intent UI, the SCIE Drupal module, Highcharts visualisation work, a Marvel prototype, public GitHub experiments, and Drupal community-maintained initiatives. His portfolio also reflects years of digital platform and front-end work.'
+  }
+
+  if (/(talk|conference|speaking|youtube|interview|meetup|community|opensource|drupal community|mentoring)/.test(q)) {
+    return 'He is active in the Drupal community through contributions, talks, meetups, public learning, and mentoring. He has spoken at DrupalCamp Colorado, Drupal Ottawa, Stanford WebCamp, DDI Camp and A11y Talks, and he is known for helping younger developers engage with Drupal and web technology.'
+  }
+
+  if (/(book|livelihood|publish|writing|medium|article|dzone|author)/.test(q)) {
+    return 'He writes on Medium and DZone and published the book Livelihood of Living in 2018. His work extends beyond engineering into storytelling, ideas, and practical perspectives on life and technology.'
+  }
+
+  if (/(music|soundcloud|hobby|apart from work|outside work|personal life|what else|life)/.test(q)) {
+    return 'Outside professional work, Sibu Stephen is also connected to creative and cultural interests. His public profile includes music via SoundCloud, writing, learning, design thinking, and community engagement beyond just software engineering.'
+  }
+
+  if (/(github|linkedin|medium|behance|drupal.org|soundcloud|dzone|social|connect|contact)/.test(q)) {
+    return 'You can follow Sibu Stephen on GitHub, Drupal.org, Medium, DZone, Behance, LinkedIn and SoundCloud. His portfolio also includes structured profile JSON and LLM-friendly resources for machines and assistants.'
+  }
+
+  if (/(where|based|location|live|lives|reside|country|india|pune|edmonton|home)/.test(q)) {
+    return 'Sibu Stephen has roots in Pune, India, where he studied at Wadia College and Pune University and stayed active in the local Drupal Pune community. He is currently based in Edmonton, Canada, where he continues his professional work and has helped organize Drupal Meetup Edmonton events. So while Pune shaped his education and early community involvement, Edmonton is where he lives and works today.'
+  }
+
+  if (/(help|ask|can you|what can you answer|summary)/.test(q)) {
+    return 'I can answer questions about Sibu Stephen’s work, background, education, Drupal expertise, React and accessibility experience, projects, community involvement, talks, writing, music, and overall professional identity.'
+  }
+
+  return 'Sibu Stephen is a Drupal architect, front-end engineer and accessibility-focused digital professional with a strong background in open-source work, design systems, community contribution, writing, and product-minded implementation. He is known for combining technical depth with practical, user-centered digital experiences.'
+}
+
+async function fetchPublicWebContext(question) {
+  const searchQuery = `Sibu Stephen ${question}`
+  const url = `https://api.duckduckgo.com/?q=${encodeURIComponent(searchQuery)}&format=json&no_redirect=1&no_html=1&skip_disambig=1`
+
+  try {
+    const response = await fetch(url)
+    if (!response.ok) return null
+
+    const data = await response.json()
+    const abstract = data?.AbstractText?.trim()
+    const source = data?.AbstractSource?.trim()
+    const related = data?.RelatedTopics?.find(topic => typeof topic === 'object' && topic?.Text)?.Text
+    const snippet = abstract || related
+
+    if (!snippet) return null
+
+    return {
+      snippet: snippet.replace(/\s+/g, ' ').trim(),
+      source: source || 'Public web'
+    }
+  } catch (error) {
+    return null
+  }
+}
 
 export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('theme') || 'dark')
   const [menuOpen, setMenuOpen] = useState(false)
   const [query, setQuery] = useState('')
+  const [messages, setMessages] = useState([
+    {
+      role: 'assistant',
+      text: 'Hi! I can answer questions about Sibu Stephen, including his work, background, Drupal expertise, accessibility focus, projects, writing, music, community contributions, and where he is based.'
+    }
+  ])
+  const [input, setInput] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [chatOpen, setChatOpen] = useState(true)
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
@@ -21,6 +114,34 @@ export default function App() {
     if (!term) return projects
     return projects.filter(item => `${item.category} ${item.title} ${item.description}`.toLowerCase().includes(term))
   }, [query])
+
+  const askQuestion = async (rawQuestion) => {
+    const trimmed = rawQuestion.trim()
+    if (!trimmed || loading) return
+
+    setMessages(prev => [...prev, { role: 'user', text: trimmed }])
+    setInput('')
+    setLoading(true)
+
+    const profileAnswer = buildProfileAnswer(trimmed)
+    const publicContext = await fetchPublicWebContext(trimmed)
+
+    const finalText = publicContext
+      ? `${profileAnswer}\n\nPublic-source context: ${publicContext.snippet} (${publicContext.source})`
+      : profileAnswer
+
+    setMessages(prev => [...prev, { role: 'assistant', text: finalText }])
+    setLoading(false)
+  }
+
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    await askQuestion(input)
+  }
+
+  const handleQuickPrompt = async (prompt) => {
+    await askQuestion(prompt)
+  }
 
   return (
     <>
@@ -184,6 +305,58 @@ export default function App() {
           </div>
         </section>
       </main>
+
+      <div className="chatbot-floating">
+        <div className={`chatbot-widget ${chatOpen ? 'open' : 'collapsed'}`} aria-live="polite">
+          <button className="chatbot-toggle" type="button" onClick={() => setChatOpen(!chatOpen)} aria-expanded={chatOpen} aria-label={chatOpen ? 'Close chat' : 'Open chat'}>
+            <span>{chatOpen ? '✕' : '💬'}</span>
+          </button>
+
+          {chatOpen && (
+            <div className="chatbot-panel">
+              <div className="chatbot-header">
+                <div>
+                  <p className="chatbot-badge">Sibu AI</p>
+                  <h3>Portfolio assistant</h3>
+                </div>
+                <span className="chatbot-live">Online</span>
+              </div>
+
+              <div className="quick-prompts" aria-label="Suggested questions">
+                {quickPrompts.map(prompt => (
+                  <button key={prompt} type="button" onClick={() => handleQuickPrompt(prompt)}>{prompt}</button>
+                ))}
+              </div>
+
+              <div className="chatbot-messages">
+                {messages.map((message, index) => (
+                  <div key={`${message.role}-${index}`} className={`chatbot-message ${message.role}`}>
+                    <span className="chatbot-label">{message.role === 'assistant' ? 'Sibu Bot' : 'You'}</span>
+                    <p>{message.text}</p>
+                  </div>
+                ))}
+                {loading && (
+                  <div className="chatbot-message assistant">
+                    <span className="chatbot-label">Sibu Bot</span>
+                    <p>Checking the profile and public references...</p>
+                  </div>
+                )}
+              </div>
+
+              <form className="chatbot-form" onSubmit={handleSubmit}>
+                <label className="sr-only" htmlFor="chatbot-input">Ask about Sibu Stephen</label>
+                <input
+                  id="chatbot-input"
+                  value={input}
+                  onChange={event => setInput(event.target.value)}
+                  placeholder="Ask about Drupal, React, projects, books, or Sibu’s background..."
+                />
+                <button type="submit" disabled={loading}>{loading ? 'Thinking...' : 'Ask'}</button>
+              </form>
+            </div>
+          )}
+        </div>
+      </div>
 
       <footer className="site-footer">
         <div className="shell footer-wrap"><div><a className="brand" href="#top"><span>&lt;</span>SS<span>/&gt;</span></a><p>Designed and built with React, accessibility and curiosity.</p></div><div className="footer-links"><a href="https://www.linkedin.com/in/sibu-stephen-841b6353/" target="_blank" rel="me noopener noreferrer">LinkedIn</a><a href="https://medium.com/@sibustephen_55060" target="_blank" rel="me noopener noreferrer">Medium</a><a href="https://github.com/sibStephen" target="_blank" rel="me noopener noreferrer">GitHub</a></div></div>
