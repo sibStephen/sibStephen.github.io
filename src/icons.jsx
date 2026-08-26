@@ -12,3 +12,5 @@ export const Mic2 = p => <Svg {...p}><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 
 export const Headphones = p => <Svg {...p}><path d="M4 13a8 8 0 0 1 16 0M4 13v6a2 2 0 0 0 2 2h1v-8H4ZM20 13v6a2 2 0 0 1-2 2h-1v-8h3Z"/></Svg>
 export const BookOpen = p => <Svg {...p}><path d="M2 4h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H2Z"/><path d="M22 4h-6a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h7Z"/></Svg>
 export const Code2 = p => <Svg {...p}><path d="m18 16 4-4-4-4M6 8l-4 4 4 4M14.5 4l-5 16"/></Svg>
+export const ChevronLeft = p => <Svg {...p}><path d="m15 18-6-6 6-6"/></Svg>
+export const ChevronRight = p => <Svg {...p}><path d="m9 18 6-6-6-6"/></Svg>

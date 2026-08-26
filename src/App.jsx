@@ -2,6 +2,8 @@ import React, { useEffect, useMemo, useState } from 'react'
 import { ArrowRight, ArrowUpRight, BookOpen, Code2, Github, Headphones, Menu, Mic2, Moon, Search, Sun, X } from './icons'
 import ProjectCard from './components/ProjectCard'
 import TechNews from './components/TechNews'
+import DeskIllustration from './components/DeskIllustration'
+import PhotoLightbox from './components/PhotoLightbox'
 import { caseStudies, certifications, drupalContributions, education, expertise, projects, socials, talks, writing } from './data/portfolio'
 
 const nav = [['about', 'About'], ['work', 'Work'], ['drupal', 'Drupal'], ['case-studies', 'Case Studies'], ['ai', 'AI Profile'], ['news', 'Tech News'], ['writing', 'Writing'], ['credentials', 'Credentials'], ['accessibility', 'Accessibility'], ['connect', 'Connect']]
@@ -11,6 +13,15 @@ const quickPrompts = [
   'What projects has he worked on?',
   'Where is he based?',
   'What is his Drupal background?'
+]
+
+const galleryImages = [
+  { src: '/sibu.jpeg', alt: 'Sibu Stephen', caption: 'Sibu Stephen' },
+  { src: '/sibu-profile1.jpg', alt: 'Abstract chalk-drawn personal mark', caption: 'Personal mark' },
+  { src: '/sibu-profile2.jpg', alt: '"SIBU" name graphic with falling leaves', caption: 'Name mark' },
+  { src: '/sibu-profile3.jpg', alt: 'Lyrics graphic titled "My Heart, A Radio"', caption: 'My Heart, A Radio — a poem' },
+  { src: '/sibu-profile4.jpg', alt: 'Abstract geometric signature mark', caption: 'Signature mark' },
+  { src: '/sibu-profile5.jpg', alt: 'Microsoft Student Associates certificate', caption: 'Microsoft Student Associates' },
 ]
 
 const profileSummary = 'Sibu Stephen is a Drupal architect, front-end engineer, accessibility advocate, writer, community contributor and digital experience professional who blends technical depth with user-centered design.'
@@ -102,7 +113,8 @@ export default function App() {
   ])
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
-  const [chatOpen, setChatOpen] = useState(true)
+  const [chatOpen, setChatOpen] = useState(false)
+  const [galleryIndex, setGalleryIndex] = useState(null)
 
   useEffect(() => {
     document.documentElement.dataset.theme = theme
@@ -179,7 +191,25 @@ export default function App() {
             </div>
           </div>
           <div className="profile-visual">
-            <img src="/sibu-profile-v2.jpg" alt="Sibu Stephen" />
+            <div className="desk-scene">
+              <DeskIllustration />
+              <button
+                type="button"
+                className="profile-photo-pin"
+                onClick={() => setGalleryIndex(0)}
+                aria-label={`Open photo gallery, ${galleryImages.length} photos`}
+              >
+                <div className="photo-stack">
+                  <div className="photo-card photo-card-3"><img src="/sibu-profile3.jpg" alt="" /></div>
+                  <div className="photo-card photo-card-2"><img src="/sibu-profile1.jpg" alt="" /></div>
+                  <div className="photo-card photo-card-1 profile-photo-sway">
+                    <span className="photo-tape" aria-hidden="true" />
+                    <img src="/sibu.jpeg" alt="" />
+                  </div>
+                </div>
+                <span className="photo-stack-badge">+{galleryImages.length - 1}</span>
+              </button>
+            </div>
             <div className="profile-code" aria-label="Technology profile summary">
               <p>profile.json</p>
               <code>Drupal · React · WCAG · Design systems · Open source</code>
@@ -399,6 +429,15 @@ export default function App() {
       <footer className="site-footer">
         <div className="shell footer-wrap"><div><a className="brand" href="#top"><span>&lt;</span>SS<span>/&gt;</span></a><p>Designed and built with React, accessibility and curiosity.</p></div><div className="footer-links"><a href="https://www.linkedin.com/in/sibu-stephen-841b6353/" target="_blank" rel="me noopener noreferrer">LinkedIn</a><a href="https://medium.com/@sibustephen_55060" target="_blank" rel="me noopener noreferrer">Medium</a><a href="https://github.com/sibStephen" target="_blank" rel="me noopener noreferrer">GitHub</a></div></div>
       </footer>
+
+      {galleryIndex !== null && (
+        <PhotoLightbox
+          images={galleryImages}
+          index={galleryIndex}
+          onClose={() => setGalleryIndex(null)}
+          onIndexChange={setGalleryIndex}
+        />
+      )}
     </>
   )
 }
