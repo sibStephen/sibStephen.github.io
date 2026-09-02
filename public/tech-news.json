@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-31T20:04:14.427Z",
+  "generatedAt": "2026-09-02T14:00:26.622Z",
   "agent": {
     "name": "Sibu Tech News Agent",
     "provider": "Google Gemini",
@@ -7,58 +7,59 @@
     "schedule": "Weekly",
     "observability": "Langfuse"
   },
-  "summary": "An overview of this week's technology developments, highlighting advancements and regulations in artificial intelligence, cybersecurity breaches, open-source developer policies, and data center automation.",
+  "summary": "An overview of recent technology developments, focusing on advancements in artificial intelligence, cybersecurity, and accessibility.",
   "items": [
     {
-      "title": "Debian won't ban AI code from its Linux distribution",
-      "summary": "Debian developers voted to allow the use of generative AI tools in contributions for development, maintenance, and documentation. This decision acknowledges that responsible AI use can boost developer productivity without requiring special rules beyond existing standards.",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/tech/986789/linux-debian-generative-ai-policy",
-      "publishedAt": "2026-08-31T15:34:58.000Z",
+      "title": "AfterQuery reportedly becomes Y Combinator’s fastest-ever unicorn, now valued at $3.2B",
+      "summary": "AI model-training startup AfterQuery has reportedly reached a $3.2 billion valuation just five months after its Series A. This rapid growth highlights the intense investor demand and massive scale of modern artificial intelligence development tools.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/01/afterquery-reportedly-becomes-y-combinators-fastest-ever-unicorn-now-valued-at-3-2b/",
+      "publishedAt": "2026-09-01T22:08:24.000Z",
       "topics": [
         "AI",
         "Developer tools"
       ]
     },
     {
-      "title": "Hackers claim millions of patient records stolen during data breach at healthcare giant McKesson",
-      "summary": "Healthcare giant McKesson experienced a data breach where hackers claim to have stolen millions of patient records. The company, which distributes medical supplies across the U.S., warned of potential intermittent service degradation following the hack.",
+      "title": "OpenAI’s Astra model is on the way — and very good at breaking into computer systems",
+      "summary": "OpenAI has previewed Astra, its upcoming cyber-critical large language model that demonstrates advanced capabilities in breaking into computer systems. The preview highlights the safety precautions being implemented to mitigate potential cybersecurity risks before its release.",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/08/31/hackers-claim-millions-of-patient-records-stolen-during-data-breach-at-healthcare-giant-mckesson/",
-      "publishedAt": "2026-08-31T18:10:09.000Z",
+      "url": "https://techcrunch.com/2026/09/01/open-ais-astra-model-is-on-the-way-and-very-good-at-breaking-into-computer-systems/",
+      "publishedAt": "2026-09-01T21:06:24.000Z",
+      "topics": [
+        "AI",
+        "Cybersecurity"
+      ]
+    },
+    {
+      "title": "Google’s Android update tackles motion sickness, accessibility, and more",
+      "summary": "Google's latest Android update introduces new features leveraging Gemini AI to improve accessibility and address issues like motion sickness. These updates help close the feature gap with competitors while enhancing the overall user experience.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/09/01/googles-android-update-tackles-motion-sickness-accessibility-and-more/",
+      "publishedAt": "2026-09-01T20:53:05.000Z",
+      "topics": [
+        "Accessibility",
+        "AI"
+      ]
+    },
+    {
+      "title": "BGP hijack infecting networks caused by a comedy of errors that’s not funny at all",
+      "summary": "A well-executed BGP hijacking attack successfully poisoned production software by using hijacked IP addresses to infect real networks. The incident serves as a critical warning about the vulnerabilities in global routing infrastructure and the importance of network security.",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/security/2026/09/well-executed-bgp-attack-uses-hijacked-ips-to-infect-real-networks/",
+      "publishedAt": "2026-09-02T11:00:43.000Z",
       "topics": [
         "Cybersecurity"
       ]
     },
     {
-      "title": "ChatGPT to face tougher regulation in the EU",
-      "summary": "The European Union has designated ChatGPT as a Very Large Online Search Engine under the Digital Services Act, subjecting it to strict online safety rules. OpenAI will now be legally required to mitigate risks concerning minors, user mental health, and illegal content.",
+      "title": "Microsoft is enabling a Windows 11 security feature that can hurt gaming performance",
+      "summary": "Microsoft is rolling out a kernel-level memory integrity security feature to more Windows 11 devices to block malicious code. While the update significantly enhances system security, it may negatively impact PC gaming performance.",
       "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/986682/openai-chatgpt-eu-dsa",
-      "publishedAt": "2026-08-31T13:27:36.000Z",
+      "url": "https://www.theverge.com/news/988056/microsoft-windows-11-memory-integrity-rollout-october-2026",
+      "publishedAt": "2026-09-02T08:57:40.000Z",
       "topics": [
-        "AI"
-      ]
-    },
-    {
-      "title": "Inside Meta’s push to put robots to work in data centers",
-      "summary": "Meta is testing robots in its data centers to perform tasks typically handled by human technicians. This initiative aims to automate operations and improve efficiency within the company's massive infrastructure.",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/ai/2026/08/inside-metas-push-to-put-robots-to-work-in-data-centers/",
-      "publishedAt": "2026-08-30T11:03:47.000Z",
-      "topics": [
-        "Cloud platforms",
-        "Digital engineering"
-      ]
-    },
-    {
-      "title": "Instagram puts new limits on undisclosed AI profiles",
-      "summary": "Instagram is restricting the reach of undisclosed AI profiles in response to growing user frustration over AI influencers. The platform aims to enforce transparency by limiting the visibility of accounts that do not disclose their AI nature.",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/08/31/instagram-puts-new-limits-on-undisclosed-ai-profiles/",
-      "publishedAt": "2026-08-31T19:16:59.000Z",
-      "topics": [
-        "AI"
+        "Cybersecurity"
       ]
     }
   ]
