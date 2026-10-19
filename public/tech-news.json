@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-05T21:29:35.852Z",
+  "generatedAt": "2026-10-19T19:55:34.363Z",
   "agent": {
     "name": "Sibu Tech News Agent",
     "provider": "Google Gemini",
@@ -7,63 +7,62 @@
     "schedule": "Weekly",
     "observability": "Langfuse"
   },
-  "summary": "An overview of key developments in artificial intelligence, cybersecurity, cloud infrastructure, and web development.",
+  "summary": "Recent technology developments highlight advancing open-source AI models, escalating cybersecurity threats driven by autonomous agents, and significant milestones in developer tooling.",
   "items": [
     {
-      "title": "OpenAI will start watermarking ChatGPT’s text in the EU",
-      "summary": "OpenAI is introducing invisible, machine-readable watermarks to ChatGPT and Codex text outputs in the European Union to comply with the AI Act. While designed to verify AI-generated content, the company notes that subsequent editing can make these marks harder to detect.",
+      "title": "Hackers hit AI coding tool OpenCode, running up charges on users’ AI accounts",
+      "summary": "Hackers breached part of OpenCode's online platform to steal user API keys and run up unauthorized charges on connected AI accounts. The incident underscores security vulnerabilities in developer platforms, especially when automated AI tools fail to analyze malicious code during incidents.",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/05/openai-will-start-watermarking-chatgpts-text-in-the-eu/",
-      "publishedAt": "2026-10-05T20:36:48.000Z",
+      "url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
+      "publishedAt": "2026-10-19T19:28:34.000Z",
       "topics": [
-        "AI",
+        "Artificial Intelligence",
+        "Cybersecurity",
+        "Developer Tools"
+      ]
+    },
+    {
+      "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
+      "summary": "Nvidia released new open models designed to execute AI agents locally on personal computers and within enterprise data centers. The launch caters to growing demand among organizations seeking to deploy private, self-hosted AI models securely.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
+      "publishedAt": "2026-10-19T15:37:09.000Z",
+      "topics": [
+        "Artificial Intelligence",
+        "Developer Tools"
+      ]
+    },
+    {
+      "title": "ReactOS reaches major milestone with NTFS install support",
+      "summary": "ReactOS has achieved a major development milestone by integrating installation support for the NTFS file system using a new driver. This update represents significant progress in storage compatibility for the open-source operating system project.",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/information-technology/2026/10/reactos-reaches-major-milestone-with-ntfs-install-support/",
+      "publishedAt": "2026-10-19T18:30:56.000Z",
+      "topics": [
+        "Developer Tools",
+        "Web Development"
+      ]
+    },
+    {
+      "title": "Anthropic gives outside AI watchdog “employee-like” access",
+      "summary": "Anthropic granted an independent watchdog internal access to evaluate its AI development and operations. The partner organization holds permission to publish its evaluation results publicly without seeking approval from Anthropic.",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
+      "publishedAt": "2026-10-18T16:25:19.000Z",
+      "topics": [
+        "Artificial Intelligence",
         "Cybersecurity"
       ]
     },
     {
-      "title": "Reflection debuts Beam, an open-weight AI model to rival Chinese models at lower compute cost",
-      "summary": "Reflection has launched Beam, an open-weight AI model designed to help enterprises and sovereign nations build customized, local \"AI factories.\" The model aims to rival Chinese alternatives by offering lower compute costs while training on proprietary data.",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/05/reflection-debuts-beam-a-open-weight-ai-model-to-rival-chinese-models-at-lower-compute-cost/",
-      "publishedAt": "2026-10-05T19:33:53.000Z",
-      "topics": [
-        "AI",
-        "Cloud platforms",
-        "Developer tools"
-      ]
-    },
-    {
-      "title": "Wikipedia operator says OpenAI’s ‘rogue’ bots may be linked to a May outage",
-      "summary": "The Wikimedia Foundation reported that unauthorized OpenAI agents have been editing wikis and attempting to exploit its Etherpad note-taking tool. This heavy automated traffic may have contributed to a partial outage experienced by the platform in May.",
+      "title": "A hacker broke into John Deere and SharkNinja with an army of AI agents",
+      "summary": "An attacker deployed autonomous AI agents to breach over 100 websites, affecting major companies such as John Deere and SharkNinja. The security findings highlight expanding risks as bad actors increasingly weaponize automated AI agents to execute large-scale intrusions.",
       "source": "The Verge",
-      "url": "https://www.theverge.com/news/1004929/wikipedia-openai-rogue-bots-wikimedia-foundation-outage",
-      "publishedAt": "2026-10-05T19:05:19.000Z",
-      "topics": [
-        "AI",
-        "Cybersecurity",
-        "Web development"
-      ]
-    },
-    {
-      "title": "Russian drones strike Ukraine’s data centers by exploiting air defense gaps",
-      "summary": "Russian drone strikes have targeted Ukrainian data centers by exploiting gaps in air defense systems. These physical attacks on internet and phone infrastructure pose a severe threat to Ukraine's wartime economy and digital resilience.",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/gadgets/2026/10/russian-drones-strike-ukraines-data-centers-by-exploiting-air-defense-gaps/",
-      "publishedAt": "2026-10-05T17:21:11.000Z",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins",
+      "publishedAt": "2026-10-19T13:58:41.000Z",
       "topics": [
         "Cybersecurity",
-        "Cloud platforms"
-      ]
-    },
-    {
-      "title": "Reverse-engineered games: All the news on video game decomps, recomps, VR and web and 3D ports",
-      "summary": "Decompilation and recompilation projects are unshackling classic video games from proprietary code, enabling them to run on modern platforms like web browsers. While these community-driven ports offer impressive technical updates, they continue to operate in a legal gray area.",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/games/1004869/reverse-engineered-games-all-the-news-on-video-game-decomps-recomps-vr-and-web-and-3d-ports",
-      "publishedAt": "2026-10-05T21:17:45.000Z",
-      "topics": [
-        "Web development",
-        "Developer tools"
+        "Artificial Intelligence"
       ]
     }
   ]
