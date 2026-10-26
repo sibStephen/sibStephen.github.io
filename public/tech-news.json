@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T19:55:34.363Z",
+  "generatedAt": "2026-10-26T19:56:45.525Z",
   "agent": {
     "name": "Sibu Tech News Agent",
     "provider": "Google Gemini",
@@ -7,62 +7,62 @@
     "schedule": "Weekly",
     "observability": "Langfuse"
   },
-  "summary": "Recent technology developments highlight advancing open-source AI models, escalating cybersecurity threats driven by autonomous agents, and significant milestones in developer tooling.",
+  "summary": "This week's technology highlights focus on major artificial intelligence filings, massive hardware infrastructure investments, evolving web platform defenses against AI agents, and industrial automation.",
   "items": [
     {
-      "title": "Hackers hit AI coding tool OpenCode, running up charges on users’ AI accounts",
-      "summary": "Hackers breached part of OpenCode's online platform to steal user API keys and run up unauthorized charges on connected AI accounts. The incident underscores security vulnerabilities in developer platforms, especially when automated AI tools fail to analyze malicious code during incidents.",
+      "title": "Anthropic officially files for its public debut",
+      "summary": "AI startup Anthropic has officially filed for an initial public offering, revealing surging revenue alongside growing enterprise adoption. The filing marks a critical milestone for AI foundation model providers scaling up commercial operations.",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/19/hackers-hit-ai-coding-tool-opencode-running-up-charges-on-users-ai-accounts/",
-      "publishedAt": "2026-10-19T19:28:34.000Z",
+      "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
+      "publishedAt": "2026-10-26T14:35:22.000Z",
       "topics": [
-        "Artificial Intelligence",
+        "AI",
+        "Cloud platforms"
+      ]
+    },
+    {
+      "title": "SpaceX locks in $40B GPU financing deal with Apollo",
+      "summary": "SpaceX secured a binding commitment for roughly $40 billion in financing to fund AI chips and related data center infrastructure. This massive deal highlights the enormous capital necessary to build next-generation compute environments.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/",
+      "publishedAt": "2026-10-26T16:46:36.000Z",
+      "topics": [
+        "AI",
+        "Cloud platforms"
+      ]
+    },
+    {
+      "title": "Highway thieves are spoofing GPS to steal millions in data center-bound cargo",
+      "summary": "Investigators detailed how cargo thieves used GPS spoofing to hijack $100 million in equipment destined for data centers. The trend reveals critical supply chain vulnerabilities targeting essential hardware infrastructure.",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo/",
+      "publishedAt": "2026-10-26T17:26:36.000Z",
+      "topics": [
         "Cybersecurity",
-        "Developer Tools"
+        "Cloud platforms"
       ]
     },
     {
-      "title": "Nvidia launches new open models to run agents in the enterprise and on PCs",
-      "summary": "Nvidia released new open models designed to execute AI agents locally on personal computers and within enterprise data centers. The launch caters to growing demand among organizations seeking to deploy private, self-hosted AI models securely.",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/19/nvidia-launches-new-open-models-to-run-agents-in-the-enterprise-and-on-pcs/",
-      "publishedAt": "2026-10-19T15:37:09.000Z",
+      "title": "The RealReal won’t let AI agents hog designer clothing",
+      "summary": "Luxury consignment platform The RealReal updated its bot defenses after automated AI agents repeatedly held items in shopping carts to exploit reservation windows. The incident underscores new bot-mitigation challenges facing web application developers in the agentic AI era.",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal",
+      "publishedAt": "2026-10-26T17:30:55.000Z",
       "topics": [
-        "Artificial Intelligence",
-        "Developer Tools"
-      ]
-    },
-    {
-      "title": "ReactOS reaches major milestone with NTFS install support",
-      "summary": "ReactOS has achieved a major development milestone by integrating installation support for the NTFS file system using a new driver. This update represents significant progress in storage compatibility for the open-source operating system project.",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/information-technology/2026/10/reactos-reaches-major-milestone-with-ntfs-install-support/",
-      "publishedAt": "2026-10-19T18:30:56.000Z",
-      "topics": [
-        "Developer Tools",
-        "Web Development"
-      ]
-    },
-    {
-      "title": "Anthropic gives outside AI watchdog “employee-like” access",
-      "summary": "Anthropic granted an independent watchdog internal access to evaluate its AI development and operations. The partner organization holds permission to publish its evaluation results publicly without seeking approval from Anthropic.",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/ai/2026/10/anthropic-gives-outside-ai-watchdog-employee-like-access/",
-      "publishedAt": "2026-10-18T16:25:19.000Z",
-      "topics": [
-        "Artificial Intelligence",
+        "AI",
+        "Web development",
         "Cybersecurity"
       ]
     },
     {
-      "title": "A hacker broke into John Deere and SharkNinja with an army of AI agents",
-      "summary": "An attacker deployed autonomous AI agents to breach over 100 websites, affecting major companies such as John Deere and SharkNinja. The security findings highlight expanding risks as bad actors increasingly weaponize automated AI agents to execute large-scale intrusions.",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1013643/ai-agents-hack-john-deere-shark-ninja-cummins",
-      "publishedAt": "2026-10-19T13:58:41.000Z",
+      "title": "This startup’s self-driving excavators help dig up $600M in new funding",
+      "summary": "Bedrock Robotics raised $600 million at a $4.1 billion valuation to accelerate development of autonomous heavy excavators. The investment addresses growing labor shortages through advanced digital engineering and robotics.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/10/26/this-startups-self-driving-excavators-help-dig-up-600m-in-new-funding/",
+      "publishedAt": "2026-10-26T17:45:00.000Z",
       "topics": [
-        "Cybersecurity",
-        "Artificial Intelligence"
+        "AI",
+        "Digital engineering"
       ]
     }
   ]
