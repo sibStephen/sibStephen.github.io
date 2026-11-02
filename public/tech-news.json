@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T19:56:45.525Z",
+  "generatedAt": "2026-11-02T22:46:21.725Z",
   "agent": {
     "name": "Sibu Tech News Agent",
     "provider": "Google Gemini",
@@ -7,62 +7,61 @@
     "schedule": "Weekly",
     "observability": "Langfuse"
   },
-  "summary": "This week's technology highlights focus on major artificial intelligence filings, massive hardware infrastructure investments, evolving web platform defenses against AI agents, and industrial automation.",
+  "summary": "This week's technology highlights cover breakthroughs and challenges in artificial intelligence, cybersecurity threats, changes in web hosting platforms, and evolving cloud infrastructure initiatives.",
   "items": [
     {
-      "title": "Anthropic officially files for its public debut",
-      "summary": "AI startup Anthropic has officially filed for an initial public offering, revealing surging revenue alongside growing enterprise adoption. The filing marks a critical milestone for AI foundation model providers scaling up commercial operations.",
+      "title": "Anthropic warns that it’s very close to RSI capability, aka self-building AI",
+      "summary": "Anthropic warned that AI development is approaching recursive self-improvement capability where models can train themselves. This threshold marks a potential dramatic acceleration in AI capabilities and autonomous model development.",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/26/anthropic-officially-files-for-its-public-debut/",
-      "publishedAt": "2026-10-26T14:35:22.000Z",
+      "url": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/",
+      "publishedAt": "2026-11-02T22:14:50.000Z",
       "topics": [
-        "AI",
-        "Cloud platforms"
+        "Artificial Intelligence",
+        "Developer Tools"
       ]
     },
     {
-      "title": "SpaceX locks in $40B GPU financing deal with Apollo",
-      "summary": "SpaceX secured a binding commitment for roughly $40 billion in financing to fund AI chips and related data center infrastructure. This massive deal highlights the enormous capital necessary to build next-generation compute environments.",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/26/spacex-locks-in-40b-gpu-financing-deal-with-apollo/",
-      "publishedAt": "2026-10-26T16:46:36.000Z",
-      "topics": [
-        "AI",
-        "Cloud platforms"
-      ]
-    },
-    {
-      "title": "Highway thieves are spoofing GPS to steal millions in data center-bound cargo",
-      "summary": "Investigators detailed how cargo thieves used GPS spoofing to hijack $100 million in equipment destined for data centers. The trend reveals critical supply chain vulnerabilities targeting essential hardware infrastructure.",
-      "source": "Ars Technica",
-      "url": "https://arstechnica.com/tech-policy/2026/10/highway-thieves-are-spoofing-gps-to-steal-millions-in-data-center-bound-cargo/",
-      "publishedAt": "2026-10-26T17:26:36.000Z",
+      "title": "One of Google’s Android partners turned 1.3 million set-top boxes into a botnet",
+      "summary": "Google dismantled a backdoor hidden in 1.3 million Android TV set-top boxes by manufacturing partner Videostrong Technology. The compromised devices were secretly used for malicious network traffic routing and ad fraud before Google cut ties with the vendor.",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/1024807/google-botnet-android-tv-shut-down",
+      "publishedAt": "2026-11-02T20:37:49.000Z",
       "topics": [
         "Cybersecurity",
-        "Cloud platforms"
+        "Digital Engineering"
       ]
     },
     {
-      "title": "The RealReal won’t let AI agents hog designer clothing",
-      "summary": "Luxury consignment platform The RealReal updated its bot defenses after automated AI agents repeatedly held items in shopping carts to exploit reservation windows. The incident underscores new bot-mitigation challenges facing web application developers in the agentic AI era.",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/news/1018713/meta-muse-agentic-shopping-ai-the-realreal",
-      "publishedAt": "2026-10-26T17:30:55.000Z",
-      "topics": [
-        "AI",
-        "Web development",
-        "Cybersecurity"
-      ]
-    },
-    {
-      "title": "This startup’s self-driving excavators help dig up $600M in new funding",
-      "summary": "Bedrock Robotics raised $600 million at a $4.1 billion valuation to accelerate development of autonomous heavy excavators. The investment addresses growing labor shortages through advanced digital engineering and robotics.",
+      "title": "Web host Squarespace lays off 19% of its employees",
+      "summary": "Website builder and web hosting platform Squarespace announced workforce reductions impacting 19 percent of its staff. The company stated the job cuts are part of a broader corporate restructuring.",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/10/26/this-startups-self-driving-excavators-help-dig-up-600m-in-new-funding/",
-      "publishedAt": "2026-10-26T17:45:00.000Z",
+      "url": "https://techcrunch.com/2026/11/02/web-host-squarespace-lays-off-19-of-its-employees/",
+      "publishedAt": "2026-11-02T19:25:59.000Z",
       "topics": [
-        "AI",
-        "Digital engineering"
+        "Web Development",
+        "Content Platforms"
+      ]
+    },
+    {
+      "title": "New York Times and other outlets sue web browser Brave over alleged content scraping",
+      "summary": "Major news publishers filed lawsuits against privacy-focused web browser maker Brave for allegedly scraping copyrighted content without authorization. The lawsuit claims Brave monetized its search index by selling access to AI developers for model training.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/",
+      "publishedAt": "2026-11-02T19:19:17.000Z",
+      "topics": [
+        "Artificial Intelligence",
+        "Web Development"
+      ]
+    },
+    {
+      "title": "OpenAI pitches data center power plants as a way to protect nearby areas",
+      "summary": "OpenAI announced its Grid Protectors Program to share energy from data center power infrastructure during extreme weather emergencies. The initiative aims to relieve public grid strain by offering up to 1,000 megawatts back to local communities.",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program",
+      "publishedAt": "2026-11-02T18:01:30.000Z",
+      "topics": [
+        "Cloud Platforms",
+        "Artificial Intelligence"
       ]
     }
   ]
