@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-02T22:46:21.725Z",
+  "generatedAt": "2026-11-09T23:26:18.647Z",
   "agent": {
     "name": "Sibu Tech News Agent",
     "provider": "Google Gemini",
@@ -7,61 +7,62 @@
     "schedule": "Weekly",
     "observability": "Langfuse"
   },
-  "summary": "This week's technology highlights cover breakthroughs and challenges in artificial intelligence, cybersecurity threats, changes in web hosting platforms, and evolving cloud infrastructure initiatives.",
+  "summary": "This week's technology updates highlight key advancements in AI models and engineering platforms alongside critical cybersecurity vulnerabilities affecting Linux systems, developer tooling, and mobile applications.",
   "items": [
     {
-      "title": "Anthropic warns that it’s very close to RSI capability, aka self-building AI",
-      "summary": "Anthropic warned that AI development is approaching recursive self-improvement capability where models can train themselves. This threshold marks a potential dramatic acceleration in AI capabilities and autonomous model development.",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/02/anthropic-warns-that-its-very-close-to-rsi-capability-aka-self-building-ai/",
-      "publishedAt": "2026-11-02T22:14:50.000Z",
+      "title": "Anthropic launches new Claude Fable and Mythos 5.2 models",
+      "summary": "Anthropic introduced its new Claude Fable 5.2 and Mythos 5.2 models designed to handle complex coding, reasoning, and vision tasks. The release aims to help developers tackle challenging software engineering and scientific problems more quickly.",
+      "source": "The Verge",
+      "url": "https://www.theverge.com/ai-artificial-intelligence/1030005/anthropic-claude-fable-mythos-5-2",
+      "publishedAt": "2026-11-09T19:00:00.000Z",
       "topics": [
         "Artificial Intelligence",
         "Developer Tools"
       ]
     },
     {
-      "title": "One of Google’s Android partners turned 1.3 million set-top boxes into a botnet",
-      "summary": "Google dismantled a backdoor hidden in 1.3 million Android TV set-top boxes by manufacturing partner Videostrong Technology. The compromised devices were secretly used for malicious network traffic routing and ad fraud before Google cut ties with the vendor.",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/1024807/google-botnet-android-tv-shut-down",
-      "publishedAt": "2026-11-02T20:37:49.000Z",
+      "title": "Claude Code is accidentally exposing secrets all over GitHub",
+      "summary": "A setting in Claude Code has led to thousands of sensitive credentials, including API keys and passwords, being inadvertently published to GitHub repositories. This security risk highlights critical challenges in developer tooling and automated AI configuration.",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/ai/2026/11/claude-code-settings-files-expose-thousands-of-secrets-on-github/",
+      "publishedAt": "2026-11-09T17:24:26.000Z",
       "topics": [
         "Cybersecurity",
+        "Developer Tools",
+        "Artificial Intelligence"
+      ]
+    },
+    {
+      "title": "AI hardware startup Nominal triples valuation to $3B in 8 months",
+      "summary": "Hardware engineering AI platform startup Nominal raised a new funding round that tripled its valuation to $3 billion in eight months. The company serves major clients like Anduril to streamline engineering workflows using artificial intelligence.",
+      "source": "TechCrunch",
+      "url": "https://techcrunch.com/2026/11/09/ai-hardware-startup-nominal-triples-valuation-to-3b-in-8-months/",
+      "publishedAt": "2026-11-09T19:21:46.000Z",
+      "topics": [
+        "Artificial Intelligence",
         "Digital Engineering"
       ]
     },
     {
-      "title": "Web host Squarespace lays off 19% of its employees",
-      "summary": "Website builder and web hosting platform Squarespace announced workforce reductions impacting 19 percent of its staff. The company stated the job cuts are part of a broader corporate restructuring.",
-      "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/02/web-host-squarespace-lays-off-19-of-its-employees/",
-      "publishedAt": "2026-11-02T19:25:59.000Z",
+      "title": "Vulnerability that lets hackers SSH into Linux devices is under active exploitation",
+      "summary": "A critical security flaw allowing unauthorized SSH access to Linux devices is currently under active exploitation by attackers. The vulnerability poses a severe threat to internet security and enterprise infrastructure.",
+      "source": "Ars Technica",
+      "url": "https://arstechnica.com/security/2026/11/vulnerability-that-lets-hackers-ssh-into-linux-devices-is-under-active-exploitation/",
+      "publishedAt": "2026-11-09T19:41:34.000Z",
       "topics": [
-        "Web Development",
-        "Content Platforms"
+        "Cybersecurity",
+        "Cloud Platforms"
       ]
     },
     {
-      "title": "New York Times and other outlets sue web browser Brave over alleged content scraping",
-      "summary": "Major news publishers filed lawsuits against privacy-focused web browser maker Brave for allegedly scraping copyrighted content without authorization. The lawsuit claims Brave monetized its search index by selling access to AI developers for model training.",
+      "title": "Hotel giant Wyndham exposed customer data after app security lapse",
+      "summary": "Wyndham left hardcoded credentials inside its customer application, allowing unauthorized access to sensitive customer data. The incident underscores significant vulnerabilities in mobile application security and data protection.",
       "source": "TechCrunch",
-      "url": "https://techcrunch.com/2026/11/02/new-york-times-and-other-outlets-sue-web-browser-brave-over-alleged-content-scraping/",
-      "publishedAt": "2026-11-02T19:19:17.000Z",
+      "url": "https://techcrunch.com/2026/11/09/hotel-giant-wyndham-exposed-customer-data-after-app-security-lapse/",
+      "publishedAt": "2026-11-09T23:03:46.000Z",
       "topics": [
-        "Artificial Intelligence",
+        "Cybersecurity",
         "Web Development"
-      ]
-    },
-    {
-      "title": "OpenAI pitches data center power plants as a way to protect nearby areas",
-      "summary": "OpenAI announced its Grid Protectors Program to share energy from data center power infrastructure during extreme weather emergencies. The initiative aims to relieve public grid strain by offering up to 1,000 megawatts back to local communities.",
-      "source": "The Verge",
-      "url": "https://www.theverge.com/ai-artificial-intelligence/1024604/openai-data-center-grid-protection-program",
-      "publishedAt": "2026-11-02T18:01:30.000Z",
-      "topics": [
-        "Cloud Platforms",
-        "Artificial Intelligence"
       ]
     }
   ]
